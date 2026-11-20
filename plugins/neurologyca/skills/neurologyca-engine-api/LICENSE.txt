@@ -1,0 +1,130 @@
+Published at /legal/skills-license/1.0/
+Links of the form /legal/<document> in this text refer to the pages of that name on Neurologyca DevLab.
+
+# Neurologyca Agent Skills License
+
+Copyright (c) Neurologyca Technologies Ltd., 960 Market St. Unit 1209, San Francisco, CA 94102, United States ("Neurologyca"). All rights reserved.
+
+These terms apply to the Neurologyca Agent Skills (the "Skills"): the instructions, reference documents and helper scripts in the package in which these terms are distributed, in any form in which Neurologyca distributes them (folder, archive, catalog or download from a Neurologyca site). The Skills are published so that anyone can read and evaluate them; installing or using them is allowed only as set out below. By installing or using the Skills you accept these terms on your own behalf and on behalf of the organization you act for, and you confirm that you have authority to bind that organization. If you do not accept them, do not install or use the Skills.
+
+## 1. Who may use the Skills
+
+a) Anyone may download and read the Skills to evaluate them.
+
+b) You may install and use the Skills only if you, or the organization you act for, have an active Neurologyca DevLab account, on any plan including a free or trial plan, or a Written Agreement with Neurologyca that allows you to integrate its products. "Your Agreement" means the Neurologyca DevLab Terms of Service, published in DevLab at [/legal/terms](/legal/terms), together with the documents they incorporate, and any Written Agreement. A "Written Agreement" is an enterprise agreement, order form or service level agreement signed with Neurologyca. If the DevLab Terms of Service and a Written Agreement differ, the Written Agreement prevails.
+
+c) The Skills are intended for professional and business use by persons aged 18 or over acting for an organization. They are not offered to consumers.
+
+d) If your DevLab account and every Written Agreement have ended, your right to install and use the Skills ends with them.
+
+## 2. What you may do, including with AI assistants
+
+a) Subject to these terms, Neurologyca grants you a limited, non-exclusive, non-transferable, non-sublicensable and revocable license to: (i) install the Skills in the AI assistants and development tools used by you or your organization, and let those tools read, process and follow them; and (ii) copy and adapt the Skills inside your organization's own projects; in both cases only to build, test, operate and maintain your own integration with Neurologyca's products under Your Agreement.
+
+b) You may load the Skills into an AI assistant or agent provided by a third party that you or your organization have engaged (an "AI Assistant Provider"), including where that provider processes the Skills on its own systems to provide its service to you. That processing is not a distribution of the Skills and grants the AI Assistant Provider no right in them.
+
+c) The AI Assistant Provider's own terms govern its service, its handling of what you send to it and your relationship with it. Neurologyca is not a party to those terms and is not responsible for the AI assistant, for its availability, for how its provider handles data, or for the code, configuration, commands or other outputs it produces with the Skills.
+
+d) Before you use an AI assistant with the Skills, check whether its provider retains or uses prompts, code, credentials or data, and configure it so that secrets, API Keys and personal data you are not authorized to disclose are not sent to it. Where the provider offers a setting that excludes your inputs from training, you are encouraged to use it.
+
+## 3. What you may not do
+
+You may not, and may not allow anyone else to:
+
+a) use the Skills for any purpose other than the one in section 2;
+
+b) publish, distribute, sell, rent, lease, sublicense or otherwise make the Skills, or adapted versions of them, available to anyone outside your organization, or as a stand-alone product, except (i) to contractors working on your integration under written obligations at least as protective of Neurologyca as these terms, and (ii) to AI Assistant Providers as section 2(b) allows;
+
+c) use the Skills to obtain, or to help obtain, the source code, models, internal interfaces or non-public behavior of Neurologyca's products or services, including by reverse engineering, decompiling or disassembling them, except to the extent that applicable law expressly permits it notwithstanding this restriction, including any mandatory right to achieve interoperability. Neurologyca's software and services are governed by their own licenses and by Your Agreement;
+
+d) use the Skills to build or train a product or service that competes with Neurologyca's, or use the Skills as training or fine-tuning data for any machine learning model without Neurologyca's written authorization. An AI assistant reading the Skills to help with your integration is not training;
+
+e) use the Skills to get around authentication, usage limits, metering, security measures or access controls of Neurologyca's products or services, or to reach any interface that your credentials are not meant for; or
+
+f) remove, obscure or change any copyright, license or proprietary notice in the Skills.
+
+## 4. Responsible and lawful use
+
+a) Your use of the Skills, and of any integration built with them, is subject to the Acceptable Use Policy published in DevLab at [/legal/aup](/legal/aup). This section summarizes some of its rules. If this section and the Acceptable Use Policy differ, the Acceptable Use Policy governs.
+
+b) You are responsible for your integration and for everything your AI assistant writes or does with the Skills. Review all generated code, configuration and commands before you use them, and in particular before they run in production or handle personal data.
+
+c) Neurologyca's products process facial, voice and other data about people, which some laws treat as personal, biometric, health-related or otherwise sensitive data, and produce indicators about people's emotional and cognitive state. For the processing carried out through your integration, the roles of each party, the instructions, the security measures and the data processing terms are those set out in Your Agreement, including the Data Processing Addendum published in DevLab at [/legal/dpa](/legal/dpa) and the Biometric and Emotion-Inference Addendum published in DevLab at [/legal/biometric-addendum](/legal/biometric-addendum). The Skills do not change them.
+
+d) You alone decide whether, where and how you use Neurologyca's products, and you are solely responsible for doing so lawfully in every place where you use them, where the people whose data is captured are located and where the results are used. That includes having a valid legal basis and, where required, the informed consent of the people involved, in writing where the law so requires, obtained before any capture; informing them visibly before capture, including that an emotion recognition system is in use where the law requires it; carrying out any impact assessment the law requires; and complying with the laws on data protection, artificial intelligence and biometric and emotional data that apply to you.
+
+e) Where Regulation (EU) 2024/1689 (the "AI Act") or a similar law applies to your use, for example because you are established in the European Union or the output of your integration is used there: (i) you are the deployer of the system you build, with the obligations that law gives deployers; (ii) you may not use Neurologyca's products to infer the emotions of a natural person in the areas of workplace and education institutions, including during the recruitment, selection, evaluation or monitoring of workers or candidates and in any educational setting, except where that law expressly allows it for medical or safety reasons; and (iii) you may not use them to categorize people on the basis of biometric data to deduce or infer their race, political opinions, trade union membership, religious or philosophical beliefs, sex life or sexual orientation.
+
+f) In every country, you may not use the Skills, or an integration built with them: to identify or verify the identity of a person; for covert surveillance or for capture without visible notice; to detect lies or assess credibility; to make a decision that produces legal effects on a person or similarly significantly affects them based solely on Neurologyca's indicators, without meaningful human review; or for any other use that is unlawful, discriminatory, deceptive or prohibited by the Acceptable Use Policy.
+
+g) Uses that the Acceptable Use Policy classifies as high-risk are allowed only where the applicable law allows them, and only if you meet the reinforced obligations that the Acceptable Use Policy sets for them, under your sole responsibility. Some uses may be lawful in some countries and prohibited in others; checking this before you use Neurologyca's products is your responsibility.
+
+h) Keep your API Keys and other credentials secret. The Skills never need them, and you must not paste them into the Skills or into prompts.
+
+i) The Skills do not send your data or credentials to Neurologyca. The `doctor` helper script may request the public changelog and the published version of the Skills from DevLab, and, if you ask it to, the addresses of your own application; these are ordinary web requests, and the DevLab Privacy Notice published at [/legal/privacy](/legal/privacy) applies to those that reach DevLab.
+
+## 5. Indemnity
+
+You will defend, indemnify and hold harmless Neurologyca and its affiliates, officers, employees and agents against any claim, fine, penalty, loss or cost (including reasonable legal fees) arising from your integration, from anything your AI assistant produces or does with the Skills, or from your use of the Skills or of Neurologyca's products in breach of these terms, of Your Agreement or of applicable law, including section 4. This indemnity does not cover the part of any loss caused by Neurologyca's own breach of its obligations.
+
+## 6. Ownership, other software and confidentiality
+
+a) Neurologyca keeps all rights, title and interest in the Skills, including adapted versions, except for the parts you write yourself. Names and logos of Neurologyca and its products are trademarks of Neurologyca; these terms grant no right to use them.
+
+b) These terms do not grant you any right to Neurologyca's software development kits, services, models or other materials; those are governed by their own licenses and by Your Agreement.
+
+c) The Skills are published and are not confidential information of Neurologyca. Everything else you receive through your account or Your Agreement keeps the confidentiality terms that apply to it.
+
+d) If anything in these terms conflicts with Your Agreement, Your Agreement prevails, except that sections 9 and 10 of these terms govern Neurologyca's liability for the Skills as distributed under these terms.
+
+## 7. Feedback
+
+If you send Neurologyca suggestions or feedback about the Skills, Neurologyca may use them without any obligation to you.
+
+## 8. Suspension and termination
+
+a) This license ends automatically when your DevLab account and every Written Agreement have ended.
+
+b) If you materially breach these terms, Neurologyca may notify you, and if the breach is capable of remedy and you have not remedied it within 30 days of that notice, this license ends.
+
+c) Neurologyca may suspend this license, or end it by notice, with immediate effect where your use of the Skills creates a serious risk to the security or integrity of Neurologyca's products or services, to other customers or to any person, where it is unlawful or prohibited by section 3 or by the Acceptable Use Policy, or where a court or authority requires it.
+
+d) When this license ends, stop using the Skills and delete all copies, including adapted ones and copies loaded into AI assistants under your control, except copies in routine backups until they are overwritten and copies you must keep by law.
+
+e) Sections 3 to 7 and 9 to 12 survive the end of this license.
+
+## 9. Warranties
+
+a) THE SKILLS ARE PROVIDED FREE OF CHARGE AND "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT, EXCEPT FOR ANY WARRANTY THAT CANNOT BE EXCLUDED UNDER APPLICABLE LAW. NEUROLOGYCA DOES NOT WARRANT THAT THE SKILLS, OR ANYTHING AN AI ASSISTANT PRODUCES WITH THEM, ARE ACCURATE, COMPLETE, UP TO DATE OR FREE OF ERRORS, OR THAT THEY DESCRIBE EVERY VERSION OF NEUROLOGYCA'S PRODUCTS. THE SKILLS ARE NOT LEGAL ADVICE.
+
+b) This applies on every plan, including free and trial plans. Any warranty, service level or support commitment for Neurologyca's commercial services is given only in a Written Agreement, under the terms stated there.
+
+## 10. Limitation of liability
+
+a) TO THE FULLEST EXTENT PERMITTED BY APPLICABLE LAW, NEUROLOGYCA AND ITS AFFILIATES, LICENSORS AND SUPPLIERS SHALL NOT BE LIABLE, UNDER ANY THEORY OF LIABILITY (CONTRACT, WARRANTY, TORT INCLUDING NEGLIGENCE, STRICT LIABILITY OR OTHERWISE), FOR ANY LOSS OR DAMAGE ARISING OUT OF OR IN CONNECTION WITH THE SKILLS OR THEIR USE OR ANYTHING AN AI ASSISTANT PRODUCES WITH THEM, INCLUDING DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES AND LOSS OF DATA, PROFITS, REVENUE, BUSINESS OR GOODWILL, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THE SKILLS ARE PROVIDED FREE OF CHARGE, AND YOU USE THEM AT YOUR OWN RISK.
+
+b) IF, NOTWITHSTANDING SECTION 10(a), NEUROLOGYCA IS HELD LIABLE IN CONNECTION WITH THE SKILLS, ITS TOTAL AGGREGATE LIABILITY UNDER OR IN CONNECTION WITH THESE TERMS, FOR ALL CLAIMS TOGETHER, SHALL NOT EXCEED ONE HUNDRED US DOLLARS (US$100). THE NUMBER OF CLAIMS OR CLAIMANTS SHALL NOT ENLARGE THIS LIMIT. THESE LIMITATIONS ARE AN ESSENTIAL BASIS ON WHICH NEUROLOGYCA PROVIDES THE SKILLS FREE OF CHARGE AND APPLY EVEN IF ANY REMEDY FAILS OF ITS ESSENTIAL PURPOSE.
+
+c) Nothing in these terms excludes or limits any liability that cannot be excluded or limited under applicable law, including liability for fraud or fraudulent misrepresentation, willful misconduct, gross negligence where the law does not allow it to be limited, death or personal injury caused by negligence, or, where the law so requires, breach of an obligation essential to these terms, in which case liability is limited to the foreseeable damage typical of such terms. Where applicable law allows liability to be limited but not excluded, section 10(b) applies.
+
+d) This section 10 covers only the Skills as distributed under these terms. Neurologyca's liability relating to its services and products and to anything else provided under Your Agreement is governed by Your Agreement. The limit in section 10(b) is separate from, and not cumulative with, any limit in Your Agreement; where a claim concerns both the Skills and Neurologyca's services, Your Agreement governs.
+
+## 11. General
+
+a) Assignment. You may not assign or transfer these terms, or any rights under them, without Neurologyca's written consent. Neurologyca may assign them to an affiliate or to a successor of the business to which the Skills relate.
+
+b) Export and sanctions. You confirm that you are not, and do not act for, a person or entity subject to sanctions or export restrictions of the United States, the European Union or the United Kingdom that would prohibit you from receiving the Skills, and you will comply with those laws in using them.
+
+c) Severability and waiver. If any part of these terms is held invalid or unenforceable, the rest remains in force and that part is replaced by a valid one as close as possible to its purpose. A failure to enforce a term is not a waiver of it.
+
+d) Entire agreement. These terms and Your Agreement are the entire agreement about the Skills and replace any earlier terms about them.
+
+e) Notices. Neurologyca gives notices through your DevLab account, by email to the address of your account or through the contact channels of Your Agreement. You give legal notices to Neurologyca at info@neurologyca.com. Technical support is available at support@neurologyca.com.
+
+f) Language. These terms are written in English. Any translation is provided for convenience only; if they differ, the English text prevails.
+
+g) Changes. Neurologyca may publish new versions of these terms. A new version applies to the versions of the Skills distributed with it; earlier versions of the Skills keep the terms they were distributed with. However, where Your Agreement incorporates the current version of these terms, that version applies to your use of any version of the Skills, including copies you installed earlier, from the date and with the notice that Your Agreement provides for changes.
+
+## 12. Governing law and disputes
+
+These terms are governed by the laws of the State of California, United States, without regard to its conflict of laws rules. Where Your Agreement sets the governing law, the forum or a dispute resolution procedure (including arbitration) for disputes with Neurologyca, that law, forum and procedure apply to any dispute arising from or related to these terms. Otherwise, any such dispute is subject to the exclusive jurisdiction of the state and federal courts located in San Francisco County, California. None of this deprives you of the protection of any mandatory rule of the law that would otherwise apply, including any right to bring proceedings in another forum.
