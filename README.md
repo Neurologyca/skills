@@ -6,8 +6,8 @@ This repository is a read-only mirror of the skills published by [DevLab](https:
 
 | Skill | Use it to |
 | --- | --- |
-| [`neurologyca-capture`](plugins/neurologyca/skills/neurologyca-capture/SKILL.md) | Integrate human-context capture in a web app with [`@neurologyca/capture`](https://www.npmjs.com/package/@neurologyca/capture) and its [`@neurologyca/capture-server`](https://www.npmjs.com/package/@neurologyca/capture-server) backend. |
-| [`neurologyca-engine-api`](plugins/neurologyca/skills/neurologyca-engine-api/SKILL.md) | Call the Engine 2 HTTP API directly from a backend in any language. |
+| [<code>neurologyca&#8209;capture</code>](plugins/neurologyca/skills/neurologyca-capture/SKILL.md) | Integrate human-context capture in a web app with [`@neurologyca/capture`](https://www.npmjs.com/package/@neurologyca/capture) and its [`@neurologyca/capture-server`](https://www.npmjs.com/package/@neurologyca/capture-server) backend. |
+| [<code>neurologyca&#8209;engine&#8209;api</code>](plugins/neurologyca/skills/neurologyca-engine-api/SKILL.md) | Call the Engine 2 HTTP API directly from a backend in any language. |
 
 ## Install
 
