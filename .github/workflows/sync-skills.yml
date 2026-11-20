@@ -1,0 +1,77 @@
+# Keeps this mirror identical to the skills DevLab production serves.
+# It never writes to main: when DevLab publishes a change, it opens (or updates) one pull request
+# for a release manager to review and merge.
+name: Sync skills from DevLab
+
+on:
+  schedule:
+    - cron: "17 6 * * *" # daily, 06:17 UTC
+  workflow_dispatch:
+  repository_dispatch:
+    types: [skills-published] # optional: DevLab can send it after a production deploy
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: sync-skills
+  cancel-in-progress: false
+
+env:
+  BRANCH: sync/devlab-skills
+
+jobs:
+  sync:
+    if: github.repository == 'Neurologyca/skills'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Download and check the skills DevLab serves
+        run: bash .github/scripts/sync-skills.sh
+
+      - name: Open or update the pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "The mirror already matches DevLab."
+            exit 0
+          fi
+
+          ver() { sed -n 's/^  version: "\(.*\)"/\1/p' | head -1; }
+          changes=""
+          for dir in plugins/neurologyca/skills/*/; do
+            name="$(basename "$dir")"
+            [ -n "$(git status --porcelain -- "$dir")" ] || continue
+            new="$(ver < "$dir/SKILL.md")"
+            old="$(git show "HEAD:${dir}SKILL.md" 2>/dev/null | ver || true)"
+            if [ -z "$old" ]; then changes+="- \`$name\`: new skill, $new. Add it to the README table."$'\n'
+            elif [ "$old" != "$new" ]; then changes+="- \`$name\`: $old → $new"$'\n'
+            else changes+="- \`$name\`: $new (files changed, same version)"$'\n'; fi
+          done
+          for name in $(git ls-tree --name-only HEAD plugins/neurologyca/skills/ | xargs -n1 basename); do
+            [ -d "plugins/neurologyca/skills/$name" ] || changes+="- \`$name\`: removed by DevLab. Remove it from the README table."$'\n'
+          done
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$BRANCH"
+          git add -A
+          git commit -q -m "Sync skills from DevLab" -m "$changes"
+          git push --force origin "$BRANCH"
+
+          body="$(printf '%s\n\n%s\n%s\n' \
+            "Skills as served by https://devlab.neurologyca.com/.well-known/agent-skills/index.json, with their sha256 digests checked and no test or internal hosts." \
+            "$changes" \
+            "Opened by the Sync skills workflow. Merge it to publish the change in the Claude Code plugin.")"
+          pr="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$pr" ]; then
+            gh pr edit "$pr" --body "$body"
+            echo "Updated pull request #$pr."
+          else
+            gh pr create --base main --head "$BRANCH" --title "Sync skills from DevLab" --body "$body"
+          fi
