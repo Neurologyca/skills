@@ -1,0 +1,17 @@
+{
+  "name": "neurologyca",
+  "owner": {
+    "name": "Neurologyca",
+    "email": "support@neurologyca.com"
+  },
+  "metadata": {
+    "description": "Official Neurologyca agent skills for integrating human-context capture and the Engine API"
+  },
+  "plugins": [
+    {
+      "name": "neurologyca",
+      "source": "./plugins/neurologyca",
+      "description": "Official Neurologyca skills: the @neurologyca/capture SDK with its capture-server backend, and the Engine 2 HTTP API."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "neurologyca",
+  "description": "Official Neurologyca skills: the @neurologyca/capture SDK with its capture-server backend, and the Engine 2 HTTP API.",
+  "author": {
+    "name": "Neurologyca",
+    "email": "support@neurologyca.com"
+  },
+  "homepage": "https://devlab.neurologyca.com/docs/start/ai-agents/",
+  "repository": "https://github.com/Neurologyca/skills"
+}
