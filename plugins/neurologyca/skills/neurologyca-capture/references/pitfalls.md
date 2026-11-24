@@ -502,7 +502,7 @@ More: https://devlab.neurologyca.com/docs/api/proxy.md · https://devlab.neurolo
 
 **Symptom.** Mental Fatigue Load, Facial Muscle Tension, Disengagement or Emotional Mental Control never appear in `/results`, not even after several sessions of the same person.
 
-**Cause.** These four need the person's history: 5 previous completed sessions in the same context (the baseline does not count), so a value from the 6th; Facial Muscle Tension from the 1st if the context has Neurologyca calibration data. Even then, Engine uses them only inside the interpretation (`/analyze`): no route returns their value, and they are not in Engine production yet.
+**Cause.** These four need the person's history: 5 previous completed sessions in the same context (the baseline does not count), so a value from the 6th; Facial Muscle Tension from the 1st if the context has Neurologyca calibration data. Even then, Engine uses them only inside the interpretation (`/analyze`): no route returns their value.
 
 **Fix.** Do not wait for them in `/results` or build on their values. Keep the same person (`externalId`) and context across sessions so the interpretation can use them, and read the per-frame indicators that do arrive.
 

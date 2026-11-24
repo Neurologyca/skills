@@ -71,10 +71,10 @@ If you read the live stream yourself, a position that asked for the interpretati
 
 - Never in `/results`: they need previous sessions of the same person in the same context, Engine uses them only inside the interpretation, and they are Preview. Do not look for them in your data; if you show them, show them as locked until that history exists, as the playground does:
 
-- Disengagement (Preview): **Warm-up: 5 sessions.** From the 6th session, in a step with at least 60 s of valid face (in practice about 66–76 s in a row). Per step or per session, only used for the interpretation (`/analyze`); no route returns its value today; not yet in Engine production
-- Mental Fatigue Load (Preview): **Warm-up: 5 sessions.** From the person's 6th session in that context: it needs 5 previous completed sessions, and the baseline does not count. Per step or per session, only used for the interpretation (`/analyze`); no route returns its value today; not yet in Engine production
-- Emotional Mental Control (Preview): **Warm-up: 5 sessions.** From the 6th session, in uninterrupted 3-minute blocks (a shorter session has no value); the Engine model is provisional. Per step or per session, only used for the interpretation (`/analyze`); no route returns its value today; not yet in Engine production
-- Facial Muscle Tension (Preview): **Warm-up: 0 or 5 sessions.** From the 1st session if the context already has Neurologyca calibration data; otherwise from the 6th. Per step or per session, only used for the interpretation (`/analyze`); no route returns its value today; not yet in Engine production
+- Disengagement (Preview): **Warm-up: 5 sessions.** From the 6th session, in a step with at least 60 s of valid face (in practice about 66–76 s in a row). Per step or per session, only used for the interpretation (`/analyze`); no route returns its value today
+- Mental Fatigue Load (Preview): **Warm-up: 5 sessions.** From the person's 6th session in that context: it needs 5 previous completed sessions, and the baseline does not count. Per step or per session, only used for the interpretation (`/analyze`); no route returns its value today
+- Emotional Mental Control (Preview): **Warm-up: 5 sessions.** From the 6th session, in uninterrupted 3-minute blocks (a shorter session has no value); the Engine model is provisional. Per step or per session, only used for the interpretation (`/analyze`); no route returns its value today
+- Facial Muscle Tension (Preview): **Warm-up: 0 or 5 sessions.** From the 1st session if the context already has Neurologyca calibration data; otherwise from the 6th. Per step or per session, only used for the interpretation (`/analyze`); no route returns its value today
 
 - Workload and Motivation need a warm-up inside each step: `null` in many frames is normal.
 
