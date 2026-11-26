@@ -57,7 +57,7 @@ Engine keeps results until you delete the person; the playground's «SDK and API
 | The interpretation | `onInterpretation` (text, `structured`, `metadata`), then `onInterpretationDetails`; `CaptureOutcome.interpretation` and `.structured`, never `metadata` (keep `metadata.status` from `onInterpretation`; `CaptureOutcome.status` is the capture's) | `admin.analyze(pair)` (`AnalyzeResult`: `interpretation`, `structured`, `metadata`, `fromCache`) |
 | What happened on the device (transcription setup, per-step transcription, capture quality) | `onReport` (`SessionReport`), also when the capture ends with `endedBy: 'abort'` or `'error'`; `CaptureOutcome` does not carry it | nothing: send what you need from the page |
 
-If you read the live stream yourself, a position that asked for the interpretation normally ends with `constellation.complete`, not `results.ready`. The indicators come first and the interpretation later (it can take minutes, https://devlab.neurologyca.com/docs/guides/timeouts.md): show the indicators as soon as they arrive, and the interpretation when it comes. With Measurement there is no interpretation at all ([measurement.md](measurement.md)).
+If you read the live stream yourself, a position that asked for the interpretation normally ends with `constellation.complete`, not `results.ready`. The indicators come first, when the session closes (during it only notices such as `hci.warning` arrive), and the interpretation later (it can take minutes, https://devlab.neurologyca.com/docs/guides/timeouts.md): show the indicators as soon as they arrive, and the interpretation when it comes. With Measurement there is no interpretation at all ([measurement.md](measurement.md)).
 
 ## The indicators: which ones to show
 

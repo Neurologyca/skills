@@ -4,7 +4,7 @@ description: "Integrates Neurologyca's Engine 2 HTTP API directly from a backend
 license: "Neurologyca Agent Skills License 1.0 (LICENSE.txt; published at /legal/skills-license): read freely; install and use with a Neurologyca account."
 compatibility: "Any language that speaks HTTPS from a backend; the key never leaves it. The scripts need Node.js 20 or later."
 metadata:
-  version: "1.1.37"
+  version: "1.1.38"
   sdk: "0.46.0"
   captureServer: "0.21.0"
   engineApi: "v2"

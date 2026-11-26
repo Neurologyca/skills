@@ -12,7 +12,7 @@ Verified with `@neurologyca/capture` 0.46.0. The detail, with the same tested co
 
 | If… | Choose |
 | --- | --- |
-| your people use a desktop or recent phones and you want results during the session (for short captures; long ones take minutes to close) | **On-device (real time)** |
+| your people use a desktop or recent phones and you want the results as soon as the session ends (seconds for short captures; long ones take minutes to close) | **On-device (real time)** |
 | the video must not leave the device | **On-device (real time)** |
 | you use lower-powered phones, sessions that last several minutes, or the rate of your sessions stays low | **Deferred (server-side)**: today you can record, upload and process with Neurologyca's processing service, with nothing to deploy. |
 | you do not know which devices your people will use, or their phones vary a lot, and you want the most stable quality | **Deferred (server-side)** (Preview): the video leaves the device and is uploaded and processed on the server, so you wait for the result after the upload. Your organization has to have it turned on. |
