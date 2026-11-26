@@ -4,7 +4,7 @@ description: "Integrates Neurologyca's emotion and human-context capture (Engine
 license: "Neurologyca Agent Skills License 1.0 (LICENSE.txt; published at /legal/skills-license): read freely; install and use with a Neurologyca account."
 compatibility: "The SDK runs in a browser page served from a secure context (HTTPS or localhost) with a Node.js 22.12 or later backend; the scripts need Node.js 20 or later and no network except doctor's optional checks."
 metadata:
-  version: "1.2.41"
+  version: "1.2.43"
   sdk: "0.46.0"
   captureServer: "0.21.0"
   engineApi: "v2"
