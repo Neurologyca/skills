@@ -461,4 +461,4 @@ Measurement has one step, and the video's end closes it. With a protocol of seve
 
 ## Bundler
 
-With `@neurologyca/capture` 0.46.0 no bundler setting is needed: any bundler (esbuild, Vite, webpack) with its defaults works. An old `minifyIdentifiers: false` in a Vite or esbuild config is no longer necessary.
+With `@neurologyca/capture` 0.46.1 no bundler setting is needed: any bundler (esbuild, Vite, webpack) with its defaults works. An old `minifyIdentifiers: false` in a Vite or esbuild config is no longer necessary.

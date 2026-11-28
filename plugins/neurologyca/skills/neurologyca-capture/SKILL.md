@@ -4,13 +4,13 @@ description: "Integrates Neurologyca's emotion and human-context capture (Engine
 license: "Neurologyca Agent Skills License 1.0 (LICENSE.txt; published at /legal/skills-license): read freely; install and use with a Neurologyca account."
 compatibility: "The SDK runs in a browser page served from a secure context (HTTPS or localhost) with a Node.js 22.12 or later backend; the scripts need Node.js 20 or later and no network except doctor's optional checks."
 metadata:
-  version: "1.2.43"
-  sdk: "0.46.0"
+  version: "1.2.46"
+  sdk: "0.46.1"
   captureServer: "0.21.0"
   engineApi: "v2"
   environment: "devlab"
   docs: "https://devlab.neurologyca.com/docs"
-  verifiedAt: "2026-11-19"
+  verifiedAt: "2026-11-27"
 ---
 
 # Integrating Neurologyca with the capture SDK
@@ -82,7 +82,7 @@ Without the kit, stop and ask the user for it. A plausible `contextId` does not 
 
 The SDK is public on npm: `npm install` needs no account and no token, and Node.js 22.12 or later (https://devlab.neurologyca.com/docs/start/install.md). The kit and the starters carry an `.npmrc` that pins `@neurologyca` to `https://registry.npmjs.org/`. A 404 when installing `@neurologyca/*` means a scope line left over from the private previews (in the project's `.npmrc` or in `~/.npmrc`) still sends it to the old registry: remove that line and its `_authToken`, or keep the kit's line in the project's `.npmrc`; `npm config get @neurologyca:registry` must print `https://registry.npmjs.org/` (or `undefined`). Never ask for a registry token, and never use the Engine key for npm. If you cannot write `.npmrc`, ask the user to rename it (`ren npmrc .npmrc` / `mv npmrc .npmrc`); do not replace it with `--userconfig`, which replaces their npm configuration.
 
-Verified with `@neurologyca/capture` 0.46.0 and `@neurologyca/capture-server` 0.21.0. Install exactly those (or check https://devlab.neurologyca.com/docs/resources/changelog.md before moving).
+Verified with `@neurologyca/capture` 0.46.1 and `@neurologyca/capture-server` 0.21.0. Install exactly those (or check https://devlab.neurologyca.com/docs/resources/changelog.md before moving).
 
 ## Golden rules
 
@@ -185,13 +185,13 @@ The scripts are plain Node.js (run them with `node`, not as executables), read o
 | `onError` with `recoverable: false` after `stop()` | `E_INTERPRETATION_TIMEOUT` | Engine has the capture: never `abort()` here. Show the indicators and ask for the interpretation later from your backend |
 | `onError` with `recoverable: true` and status `timeout` after `stop()` | `E_ANALYSIS_IN_PROGRESS` | Engine is still writing the interpretation (a `202` from `/analyze`): show the results, say «interpreting» and read it later with `client.analyze()` (check `inProgress`, wait `retryAfterMs`) |
 | The capture completed but the interpretation is refused | `E_TAXONOMY_REJECTED` | Today every `422` lands here. Two causes: an id that is not the protocol's (recapture with the right one) or one your organization cannot see (ask Neurologyca; then ask again, no recapture). Compare the ids with the kit before recording anyone else |
-| The interpretation is refused for the organization | `E_TENANT_UNKNOWN` (not emitted with SDK 0.46.0: it arrives as `E_TAXONOMY_REJECTED`) | Neither the capture nor the taxonomy: tell the user to ask Neurologyca, then ask for the interpretation again. Do not recapture |
+| The interpretation is refused for the organization | `E_TENANT_UNKNOWN` (not emitted with SDK 0.46.1: it arrives as `E_TAXONOMY_REJECTED`) | Neither the capture nor the taxonomy: tell the user to ask Neurologyca, then ask for the interpretation again. Do not recapture |
 | Gaps in the series | `capture.throttled` | The tab was hidden or covered (the warning is relative to the session's own rate: a device that is slow from the start does not raise it): the gaps are real. Keep the tab visible |
 | The camera does not open | `insecure-context` (`MediaProblem`) | Serve the page over HTTPS or from `localhost` |
 | The transcript comes back in English | `stt.autodetect` | The language was autodetected: pin `transcribe: { language }` |
 | Voice steps reach Engine with no text, very little, or translated | none, or `stt.silent` when nothing is left | `transcribe.language` is not the language the person speaks: kodec forces it, and the model either translates into it (nothing warns) or produces what kodec discards (`low-confidence`, `repetition-loop`). Declare the person's language per capture, never infer it from the page, and do not fall back to `language: null` (it also translates); https://devlab.neurologyca.com/docs/guides/csp-transcription.md |
 | A speech step will not be transcribed | `transcription.off-on-voice-step` / `transcribeSteps.excludes-voice-step` | A step with `expectsSpeech: 'yes'` runs with `transcribe` off, or `transcribeSteps` leaves it out: turn `transcribe` on and include that step's type |
-| The analysis is refused for a missing axis | `E_AXES_MISSING` (not emitted with SDK 0.46.0: it arrives as `E_TAXONOMY_REJECTED`) | Almost always your own frame source, sending frames without `featuresMeta`. Do not recapture: fix the frames and ask for the interpretation again |
+| The analysis is refused for a missing axis | `E_AXES_MISSING` (not emitted with SDK 0.46.1: it arrives as `E_TAXONOMY_REJECTED`) | Almost always your own frame source, sending frames without `featuresMeta`. Do not recapture: fix the frames and ask for the interpretation again |
 | `interpretation` is `null` with Measurement | `protocol.not-interpreted` | Expected: Measurement is never interpreted. The warning appears only where Engine reports `interpreted: false`; elsewhere, pass `triggerAnalysis: false` |
 | A 409 from Engine | `E_CONFLICT` | Branch on `reason`, never on `expired` alone, with a default case: `SESSION_ABANDONED`, `POSITION_ALREADY_COMPLETED`, `MECHANIC_EXPIRED`, `MECHANIC_NOT_YET_AVAILABLE`, `MUST_START_AT_FIRST_POSITION`, `PROTOCOL_DEPRECATED`, `POSITION_RESERVED`, `CAPTURE_DISCARDED`, `CAPTURE_OUT_OF_ORDER`, `PROTOCOL_NOT_ANALYSED`, `CAPTURE_CANCELLED` |
 | Each read of a stored interpretation generates (and bills) a new one | none (`fromCache: false`) | It was not `complete`, it was read without the audience it was written for while the person now has another, or with `reAnalyze`: send its `audience_applied`, never `reAnalyze`, and do not ask again for a `degraded` or `failed` one ([references/results-and-interpretation.md](references/results-and-interpretation.md)) |

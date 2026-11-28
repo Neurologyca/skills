@@ -698,7 +698,7 @@ More: https://devlab.neurologyca.com/docs/sdk/backend.md · https://devlab.neuro
 
 **Fix.** Serve the page over HTTPS (or `localhost` while you develop), which the camera needs anyway. Do not work around it by hosting the models yourself.
 
-Applies to: @neurologyca/capture 0.46.0 and later (kodec 5.0.0).
+Applies to: @neurologyca/capture 0.46.0 and later (kodec 5.0.0 and later).
 
 More: https://devlab.neurologyca.com/docs/guides/load-models.md · https://devlab.neurologyca.com/docs/start/install.md
 
@@ -773,6 +773,18 @@ More: https://devlab.neurologyca.com/docs/start/install.md
 Resolved in 0.38.0: update to it.
 
 More: https://devlab.neurologyca.com/docs/concepts/results.md · https://devlab.neurologyca.com/docs/sdk/results-backend.md
+
+### Speech never loads again on one device
+
+**Symptom.** A device that transcribed fine stops doing it on your site: every capture goes on without a transcript and `onWarning` gets `stt` with `blocker: 'ladder-exhausted'`, although the device has memory to spare.
+
+**Cause.** With `@neurologyca/capture` 0.46.0 and earlier (kodec 5.0.0 in 0.46.0), reading kodec's state while `prepare()` was loading the speech model recorded that load as a death. With the SDK that happened when a capture or a baseline started, or `cacheStatus()`, `captureCacheStatus()` or `readTranscriptionVeto()` ran, during that load; reading kodec yourself (`learnedState()`, `canTranscribe()`, `safeConfiguration()`, `capabilities()`) or a second copy of kodec on the page did it too. From then on kodec avoids speech on that device and origin.
+
+**Fix.** Update `@neurologyca/capture` to 0.46.1 or later (it requires kodec 5.0.2): it no longer records it. A mark already recorded does not go away on its own: the only exit is `kodec.forgetMemoryLimit()`, behind a button the person presses and told what it does, never on start-up or in an automatic retry. It erases everything kodec learned on that device and origin (a video-cost veto too) and cannot tell a false mark from a real one: on a device that really runs out of memory, the mark comes back. Until you update, do not start a capture or a baseline, nor call `cacheStatus()`, `captureCacheStatus()` or `readTranscriptionVeto()`, while `prepare()` is loading speech: wait for it to resolve.
+
+Resolved in 0.46.1: update to it.
+
+More: https://devlab.neurologyca.com/docs/guides/load-models.md · https://devlab.neurologyca.com/docs/guides/csp-transcription.md
 
 
 ## Deferred (server-side) · Preview
