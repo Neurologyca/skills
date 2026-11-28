@@ -1,6 +1,6 @@
 # Device capability
 
-Verified with `@neurologyca/capture` 0.46.0. The detail, with the same tested code: https://devlab.neurologyca.com/docs/start/devices-and-modes.md. How to load the models once the mode is chosen: [startup-and-prepare.md](startup-and-prepare.md). Read this before writing the capture: which mode suits the people's devices decides what you build.
+Verified with `@neurologyca/capture` 0.46.1. The detail, with the same tested code: https://devlab.neurologyca.com/docs/start/devices-and-modes.md. How to load the models once the mode is chosen: [startup-and-prepare.md](startup-and-prepare.md). Read this before writing the capture: which mode suits the people's devices decides what you build.
 
 ## Contents
 

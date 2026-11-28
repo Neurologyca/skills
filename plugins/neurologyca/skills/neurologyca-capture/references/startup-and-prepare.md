@@ -1,6 +1,6 @@
 # Startup screen and preparing before Start
 
-Verified with `@neurologyca/capture` 0.46.0. The five ways to load the models, with the same tested code: https://devlab.neurologyca.com/docs/guides/load-models.md. The detail of the startup: https://devlab.neurologyca.com/docs/sdk/on-device.md («The startup screen», «Prepare before Start» and «Keep the models between captures»), the caps in https://devlab.neurologyca.com/docs/guides/timeouts.md and the codes in https://devlab.neurologyca.com/docs/sdk/errors.md. Whether a device can measure and transcribe at all: [choose-mode-and-device.md](choose-mode-and-device.md). Never invent an option: `createProtocolClient` throws `E_UNKNOWN_OPTION` for any key it does not have, also inside `startup`.
+Verified with `@neurologyca/capture` 0.46.1. The five ways to load the models, with the same tested code: https://devlab.neurologyca.com/docs/guides/load-models.md. The detail of the startup: https://devlab.neurologyca.com/docs/sdk/on-device.md («The startup screen», «Prepare before Start» and «Keep the models between captures»), the caps in https://devlab.neurologyca.com/docs/guides/timeouts.md and the codes in https://devlab.neurologyca.com/docs/sdk/errors.md. Whether a device can measure and transcribe at all: [choose-mode-and-device.md](choose-mode-and-device.md). Never invent an option: `createProtocolClient` throws `E_UNKNOWN_OPTION` for any key it does not have, also inside `startup`.
 
 ## Contents
 
@@ -193,7 +193,7 @@ Optional. `client.prepare()` loads the models before the person presses Start (a
 
 ## Keeping the models between captures
 
-Since 0.46.0, `keepPrepared: true` on `createProtocolClient` (off by default, live only) keeps what `prepare()`, each capture and each baseline loaded: when a session stops, the face models, and speech whether loaded or still loading, go back to the client and the next capture adopts them. No `prepare()` between captures. With the option, `captureBaseline` adopts the prepared face and leaves speech for the capture. In `mode: 'record'` it is ignored, with the `recording.option-ignored` warning.
+Since 0.46.1, `keepPrepared: true` on `createProtocolClient` (off by default, live only) keeps what `prepare()`, each capture and each baseline loaded: when a session stops, the face models, and speech whether loaded or still loading, go back to the client and the next capture adopts them. No `prepare()` between captures. With the option, `captureBaseline` adopts the prepared face and leaves speech for the capture. In `mode: 'record'` it is ignored, with the `recording.option-ignored` warning.
 
 - Prepare once: one `client.prepare({ models: { face: true, speech: true } })` before the first capture. A `prepare()` that asks only for what is kept resolves without loading anything (its report carries `kept: true`); one that asks for a part that is not kept releases what is kept and loads it again (`prepare.released`, `'replaced'`).
 - Without WebGPU (and without `allowWasmWorker`) speech is never kept: do not prepare between captures, or ask for the face only, otherwise each `prepare()` releases the kept face and loads it again. On Safari and iOS only the face is kept, and a baseline is not lent a preparation whose speech is loading or loaded.
